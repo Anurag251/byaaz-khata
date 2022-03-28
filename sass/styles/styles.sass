@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
+$main: #0169F5
+$pri: #528DFF
+$sec: #5E9EFF
+$btnColor: #205BCD
+$dark: #141414
+$light: #ffffff
+$bg: #F0F0F0
+$para: #2D2D2D
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  background: none
+  border: none
+  outline: none
+  font-family: 'Lato', sans-serif
+  text-decoration: none
+  list-style: none
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin grid($column)
+  display: grid
+  grid-template-columns: $column
+  grid-gap: 10px
+
+@mixin imageBg()
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin wrapper()
+  max-width: 1300px
+  margin: 0 auto
+  padding: 0 20px
+
+@mixin trans()
+  transition: 1s cubic-bezier(0,1,0,1)
+
+@mixin button()
+  padding: .4rem 1rem
+  font-size: 14px
+  background-color: $pri
+  color: $light
+  border-radius: 10px
+  cursor: pointer
+
+@mixin dark($opacity)
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(#000000, $opacity)
+
+@mixin bgImage()
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin member($size)
+  .image
+    height: $size
+    border-radius: 10px
+    @include imageBg()
+    position: relative
+
+    .info
+      position: absolute
+      left: 5px
+      bottom: 5px
+      border-radius: 10px
+      background-color: rgba($dark, .78)
+      backfrop-filter: blur(10px)
+      min-width: 230px
+      padding: .7rem
+
+      .name, p, .phone, strong
+        color: $light
+
+      .name
+        font-size: 17px
+
+      p
+        font-size: 14px
+        margin-bottom: 1rem
+
+      .phone
+        font-size: 12px
+
+body
+  background-color: #F2F2F2
+  --swiper-theme-color: #294186
+
+section
+  padding: 3rem 0
+
+  &.bg
+    padding: 3rem 0
+    background-color: $bg
+
+h4
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 19px
+  display: flex
+  align-items: center
+  color: $dark
+
+p
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 29px
+  text-align: justify
+  color: $para
+
+.title
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 58px
+  text-align: center
+  color: $main
+  margin-bottom: 2rem
+
+.wrapper
+  @include wrapper()
+
+.swiper-pagination-bullet
+  height: 5px
+  width: 5px
+  border-radius: 10px !important
+  @include trans()
+
+  &.swiper-pagination-bullet-active
+    width: 20px
+
+.main
+  @include flex($justify: space-between)
+  align-items: flex-start
+  padding: 10px
+
+  header
+    position: sticky
+    top: 10px
+    width: 350px
+    height: 98vh
+    background: linear-gradient(180deg, #373737 0%, #1A1A1A 100%)
+    padding: 1rem
+    border-radius: 10px
+
+    .inner
+      @include flex($justify: space-between)
+      flex-direction: column
+      width: 100%
+      height: 100%
+
+      .top-sec, .btm-sec
+        width: 100%
+
+      .add-new-customer
+        padding: .5rem
+        background-color: rgba($btnColor, .7)
+        color: $light
+        @include flex($justify: flex-start)
+        font-size: 18px
+        width: 100%
+        border-radius: 10px
+        text-transform: uppercase
+        cursor: pointer
+        @include trans()
+
+        &:hover
+          background-color: rgba($btnColor, 1)
+          box-shadow: 0 4px 10px rgba($dark, .8)
+          transform: translateY(-2px) scale(1.01)
+
+        img
+          width: 40px
+          width: 40px
+          object-fit: contain
+
+      .logo
+        padding: 1.4rem 0 0
+        @include flex($justify: center)
+
+        img
+          width: 150px
+
+      .line
+        height: 1px
+        width: 100%
+        background-color: #8E8E8E
+        margin: 1.5rem 0
+
+      .navlinks
+        padding: 0 .5rem
+
+        .link
+          button
+            @include flex($justify: flex-start)
+            color: $light
+            font-size: 18px
+            padding: 1rem
+            width: 100%
+            border-radius: 10px
+            cursor: pointer
+
+            &:hover
+              background-color: rgba($light, .1)
+
+            &.active
+              background-color: $sec
+
+            img
+              margin-right: 10px
+              height: 22px
+              width: 22px
+              object-fit: contain
+
+  .body-section
+    max-width: 1300px
+    width: 100%
+    margin: 0 auto
+    padding: 0 10px
+
+    .profile
+      .inner
+        @include grid($column: 3fr 1fr 1fr)
+
+        .card-profile
+          background: linear-gradient(76.21deg, rgba(32, 91, 205, 0.96) 0%, rgba(94, 158, 255, 0.96) 100%), url(../../assets/images/profile-card-bg.png)
+          @include bgImage()
+          border-radius: 10px
+          padding: 1rem
+          position: relative
+          @include flex($justify: space-between)
+          flex-direction: column
+          align-items: flex-start
+          width: 100%
+
+          .verified
+            position: absolute
+            top: 10px
+            right: 10px
+            padding: .3rem .7rem
+            font-size: 12px
+            color: $light
+            background-color: #197B2F
+            border-radius: 10px
+
+          .card-profile-head
+            @include flex($justify: flex-start)
+            width: 100%
+
+            .user-image
+              height: 90px
+              width: 90px
+              border-radius: 10px
+              object-fit: cover
+
+            .details
+              color: $light
+              margin-left: 10px
+
+              .name
+                font-size: 20px
+                text-transform: uppercase
+
+              .phone
+                font-size: 16px
+                font-weight: 400
+
+              .user-id
+                margin-top: 10px
+                font-size: 14px
+                font-weight: 400
+
+          .card-profile-footer
+            width: 100%
+            margin-top: 2rem
+            @include flex($justify: space-between)
+
+            .total-investment, .total-interest
+              @include flex($justify: flex-start)
+
+              img
+                height: 40px
+                width: 40px
+                object-fit: contain
+
+              .details
+                margin-left: 10px
+                color: $light
+
+                .content-title
+                  font-weight: 600
+
+                .user-id
+                  font-weight: 400
+
+        .qr
+          padding: 1rem
+          @include flex($justify: center)
+          flex-direction: column
+          box-shadow: 0 0 10px rgba($dark, .1)
+          border-radius: 10px
+
+          img
+            height: 120px
+            width: 120px
+            object-fit: cover
+            margin-bottom: 20px
+
+          .scan-qr
+            font-size: 18px
+            text-align: center
+            font-weight: 600
+
+        .total
+          .total-owner, .total-customer
+            padding: 1rem
+            @include flex($justify: center)
+            flex-direction: column
+            box-shadow: 0 0 10px rgba($dark, .1)
+            border-radius: 10px
+
+            h3
+              @include flex($justify: flex-start)
+              margin-bottom: 10px
+              font-size: 15px
+
+              img
+                height: 16px
+                width: 16px
+                object-fit: contain
+                margin-right: 10px
+
+            .big-text
+              font-size: 50px
+
+          .total-customer
+            margin-top: 20px
+
+  .all-other-content
+    @include grid($column: 1.45fr 1fr)
+    margin-top: 10px
+
+    .ads
+      height: 400px
+      width: 100%
+      border-radius: 10px
+      position: sticky
+      top: 10px
+      overflow: hidden
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .all-content
+      overflow-x: hidden
+
+      .banner
+        padding: .5rem 0
+        height: 300px
+        width: 100%
+
+        .mySwiper
+          height: 100%
+          width: 100%
+
+        .swiper-slide
+          height: 100%
+          width: 100%
+          @include bgImage()
+          border-radius: 10px
+
+      .rin
+        padding: .5rem 0
+
+        .filters
+          @include flex($justify: space-between)
+          margin-bottom: 1rem
+
+          .filter-btn
+            @include flex($justify: flex-start)
+            position: relative
+
+            .indi-div
+              position: absolute
+              left: 0
+              top: 0
+              transform: translateX(-110%)
+              background-color: rgba($dark, .3)
+              height: 100%
+              width: 100%
+
+            .indicator
+              position: absolute
+              bottom: 0
+              left: 0
+              // transform: translateX(-300%)
+              height: 3px
+              background-color: $main
+              transition: .4s
+
+            li
+              padding: .35rem .6rem
+              margin-right: 10px
+              border-radius: 5px
+              font-size: 16px
+              color: $dark
+              text-align: center
+              position: relative
+              transition: .4s
+
+              &::after
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                height: 100%
+                width: 0%
+                background-color: $main
+                border-radius: 10px
+                z-index: -1
+                transition: .4s
+
+              &.active
+                color: $light
+
+                &::after
+                  width: 100%
