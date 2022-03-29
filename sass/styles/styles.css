@@ -385,6 +385,7 @@ p {
   -webkit-box-shadow: 0 0 10px rgba(20, 20, 20, 0.1);
           box-shadow: 0 0 10px rgba(20, 20, 20, 0.1);
   border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .main .body-section .profile .inner .qr img {
@@ -419,6 +420,7 @@ p {
   -webkit-box-shadow: 0 0 10px rgba(20, 20, 20, 0.1);
           box-shadow: 0 0 10px rgba(20, 20, 20, 0.1);
   border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .main .body-section .profile .inner .total .total-owner h3, .main .body-section .profile .inner .total .total-customer h3 {
@@ -586,5 +588,126 @@ p {
 
 .main .all-other-content .all-content .rin .filters .filter-btn li.active::after {
   width: 100%;
+}
+
+.main .all-other-content .all-content .rin .list .item {
+  padding: 5px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+          box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+  margin-bottom: 20px;
+}
+
+.main .all-other-content .all-content .rin .list .item img {
+  height: 130px;
+  width: 130px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+
+.main .all-other-content .all-content .rin .list .item .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .top-sec .name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .top-sec .phone, .main .all-other-content .all-content .rin .list .item .details .top-sec .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .top-sec .phone svg, .main .all-other-content .all-content .rin .list .item .details .top-sec .location svg {
+  margin-right: 5px;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .bottom-sec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-investment, .main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-interest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-investment img, .main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-interest img {
+  height: 30px;
+  width: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-investment .details, .main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-interest .details {
+  margin-left: 10px;
+  color: #141414;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-investment .details .content-title, .main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-interest .details .content-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-investment .details .amount, .main .all-other-content .all-content .rin .list .item .details .bottom-sec .total-interest .details .amount {
+  font-weight: 400;
+  font-size: 13px;
 }
 /*# sourceMappingURL=styles.css.map */
