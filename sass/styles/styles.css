@@ -49,6 +49,16 @@ p {
   color: #2D2D2D;
 }
 
+button {
+  -webkit-transition: 400ms cubic-bezier(0, 0, 0, 1);
+  transition: 400ms cubic-bezier(0, 0, 0, 1);
+}
+
+button.animate {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
 .title {
   font-style: normal;
   font-weight: bold;
@@ -69,8 +79,8 @@ p {
   height: 5px;
   width: 5px;
   border-radius: 10px !important;
-  -webkit-transition: 1s cubic-bezier(0, 1, 0, 1);
-  transition: 1s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -145,8 +155,8 @@ p {
   border-radius: 10px;
   text-transform: uppercase;
   cursor: pointer;
-  -webkit-transition: 1s cubic-bezier(0, 1, 0, 1);
-  transition: 1s cubic-bezier(0, 1, 0, 1);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .main header .inner .add-new-customer:hover {
@@ -231,6 +241,107 @@ p {
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+.main .body-section .header-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 1rem 0;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+          box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+  z-index: 20;
+}
+
+.main .body-section .header-nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .body-section .header-nav .nav-links li {
+  margin: 0 40px;
+  position: relative;
+}
+
+.main .body-section .header-nav .nav-links li.active::after {
+  background-color: #528DFF;
+}
+
+.main .body-section .header-nav .nav-links li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80px;
+  height: 5px;
+  border-radius: 10px;
+}
+
+.main .body-section .header-nav .nav-links li button {
+  cursor: pointer;
+}
+
+.main .body-section .header-nav .nav-links li button svg {
+  height: 30px;
+  width: 30px;
+}
+
+.main .body-section .header-nav .mini-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: right;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.main .body-section .header-nav .mini-profile .details {
+  margin-right: 10px;
+}
+
+.main .body-section .header-nav .mini-profile .details .greet {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.main .body-section .header-nav .mini-profile .details .name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.main .body-section .header-nav .mini-profile img {
+  height: 60px;
+  width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
 }
 
 .main .body-section .profile .inner {
@@ -463,12 +574,12 @@ p {
 }
 
 .main .all-other-content .ads {
-  height: 400px;
+  height: 600px;
   width: 100%;
   border-radius: 10px;
   position: -webkit-sticky;
   position: sticky;
-  top: 10px;
+  top: 100px;
   overflow: hidden;
 }
 
@@ -505,6 +616,108 @@ p {
 
 .main .all-other-content .all-content .rin {
   padding: .5rem 0;
+}
+
+.main .all-other-content .all-content .rin.add-owner-page .list .item img {
+  height: 70px;
+  width: 70px;
+}
+
+.main .all-other-content .all-content .rin.owner-page .list .item img {
+  height: 100px;
+  width: 100px;
+}
+
+.main .all-other-content .all-content .rin.owner-page .list .details {
+  width: 100%;
+}
+
+.main .all-other-content .all-content .rin.owner-page .list .details .bottom-sec {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: flex-end !important;
+}
+
+.main .all-other-content .all-content .rin.owner-page .list .details .bottom-sec button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .4rem .6rem;
+  border-radius: 4px;
+  background-color: #0169F5;
+  color: #ffffff;
+}
+
+.main .all-other-content .all-content .rin.owner-page .list .details .bottom-sec button svg {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.main .all-other-content .all-content .rin .search-card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.main .all-other-content .all-content .rin .search-card input {
+  height: 60px;
+  width: 100%;
+  padding: 1rem;
+  font-size: 18px;
+  border: 2px solid rgba(20, 20, 20, 0.2);
+  border-radius: 10px 0 0 10px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-right-color: #0169F5;
+}
+
+.main .all-other-content .all-content .rin .search-card input:focus {
+  border-color: #0169F5;
+}
+
+.main .all-other-content .all-content .rin .search-card button {
+  height: 60px;
+  width: 70px;
+  border-radius: 0 10px 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0169F5;
+  cursor: pointer;
+}
+
+.main .all-other-content .all-content .rin .search-card button svg {
+  height: 25px;
+  width: 25px;
 }
 
 .main .all-other-content .all-content .rin .filters {
@@ -590,6 +803,242 @@ p {
   width: 100%;
 }
 
+.main .all-other-content .all-content .rin .list .add-owner-form {
+  position: relative;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 1%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  height: 30px;
+  width: 30px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form h3 {
+  font-size: 20px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section {
+  overflow: hidden;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .inner-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups {
+  width: 100%;
+  margin: 0 .5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+          box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .groups .group:nth-child(1) {
+  margin-right: 5px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .groups .group:nth-child(2) {
+  margin-left: 5px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .image-upload {
+  margin-top: 2rem;
+  border: 2px solid rgba(20, 20, 20, 0.2);
+  border-radius: 10px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .image-upload label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .image-upload label h3 {
+  font-size: 16px;
+  color: rgba(20, 20, 20, 0.6);
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .image-upload .icon {
+  background-color: #528DFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 8px 0 0 8px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .image-upload .icon svg {
+  height: 30px;
+  width: 30px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .image-upload input {
+  width: 100%;
+  height: 50px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group {
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group.error {
+  margin-bottom: 3rem;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group.error .form-input-label {
+  color: #A00000;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group.error input {
+  border: 2px solid rgba(160, 0, 0, 0.8);
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group .form-input-label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 16px;
+  color: rgba(20, 20, 20, 0.6);
+  -webkit-transition: .4s;
+  transition: .4s;
+  pointer-events: none;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group .form-input-label.shrink {
+  top: -13px;
+  left: 0;
+  font-weight: 600;
+  -webkit-transform: translateY(-50%) scale(0.9);
+          transform: translateY(-50%) scale(0.9);
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid rgba(20, 20, 20, 0.2);
+  padding: 10px;
+  font-size: 18px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group input:focus {
+  border: 2px solid #5E9EFF;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group input:focus ~ .form-input-label {
+  color: #5E9EFF;
+  top: -13px;
+  left: 0;
+  font-weight: 600;
+  -webkit-transform: translateY(-50%) scale(0.9);
+          transform: translateY(-50%) scale(0.9);
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group p {
+  position: absolute;
+  bottom: -25px;
+  left: 4px;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #A00000;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .group p i {
+  margin-right: 5px;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+}
+
+.main .all-other-content .all-content .rin .list .add-owner-form .input-groups-section .input-groups .button-group button {
+  padding: 1rem;
+  background-color: #0169F5;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 10px rgba(20, 20, 20, 0.1);
+          box-shadow: 0 2px 10px rgba(20, 20, 20, 0.1);
+  width: 100%;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
 .main .all-other-content .all-content .rin .list .item {
   padding: 5px;
   border-radius: 10px;
@@ -606,7 +1055,19 @@ p {
   background-color: #ffffff;
   -webkit-box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
           box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.main .all-other-content .all-content .rin .list .item .status {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: .2rem .5rem;
+  background-color: rgba(25, 123, 47, 0.8);
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 4px;
 }
 
 .main .all-other-content .all-content .rin .list .item img {
