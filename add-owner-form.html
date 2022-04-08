@@ -449,14 +449,16 @@
                                 </svg>
                               </div>
 
-                              <h3>Upload Citizenship Front Side</h3>
-
                               <input
                                 type="file"
                                 id="formInput"
                                 class="forceToClick"
                                 hidden
                               />
+
+                              <span class="form-input-label"
+                                >Upload Citizenship Front Side</span
+                              >
                             </label>
                           </div>
 
@@ -635,28 +637,28 @@
         </div>
       </div>
     </div>
+
+    <!-- script -->
+    <script src="./js/script.js"></script>
+
+    <!-- swiper -->
+    <script src="./js/swiper.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".banner .mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
+        autoplay: {
+          delay: 3000,
+        },
+      });
+    </script>
   </body>
-
-  <!-- script -->
-  <script src="./js/script.js"></script>
-
-  <!-- swiper -->
-  <script src="./js/swiper.min.js"></script>
-
-  <script>
-    var swiper = new Swiper(".banner .mySwiper", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-
-      autoplay: {
-        delay: 3000,
-      },
-    });
-  </script>
 </html>

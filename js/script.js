@@ -22,8 +22,9 @@ if (filters) {
 
 // add-owner-form
 const addOwnerForm = document.querySelector(".add-owner-form");
+const loginSignUpPage = document.querySelector(".login-sign-up-page");
 
-if (addOwnerForm) {
+if (addOwnerForm || loginSignUpPage) {
   // shrink label
   const formInputLabel = document.querySelectorAll(".group .form-input-label");
   const formInput = document.querySelectorAll(".group #formInput");
@@ -42,7 +43,6 @@ if (addOwnerForm) {
   // wizard form
   const inputGroups = document.querySelectorAll(".input-groups");
   const innerGroup = document.querySelector(".inner-group");
-  const errorOccered = document.querySelector("#errorOccered");
   const nextBtn = document.querySelectorAll("#next-btn");
   const prevBtn = document.querySelectorAll("#prev-btn");
 
@@ -98,6 +98,10 @@ button.forEach((btn) => {
   });
 
   btn.addEventListener("mouseup", () => {
+    btn.classList.remove("animate");
+  });
+
+  btn.addEventListener("mouseout", () => {
     btn.classList.remove("animate");
   });
 });

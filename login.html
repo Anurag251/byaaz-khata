@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./sass/styles/styles.css" />
+
+    <!-- responsive -->
+    <link rel="stylesheet" href="./sass/responsive/responsive.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="./sass/others/swiper.min.css" />
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/a094afbc57.js"></script>
+
+    <!-- jquery -->
+    <script src="./js/jquery.js"></script>
+
+    <title>Byaaz Khata</title>
+  </head>
+
+  <body
+    class="login-sign-up-page"
+    style="background-image: url(./assets/images/login-sign-up-bg.png)"
+  >
+    <header class="login-sign-up-header">
+      <div class="inner">
+        <div class="logo">
+          <img src="./assets/images/logo/logo-dark.svg" alt="" />
+        </div>
+
+        <ul class="navlink">
+          <li>
+            <a href="#">
+              <button>
+                <img src="./assets/icons/Home.svg" alt="" />
+
+                Home
+              </button>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <button>
+                <img src="./assets/icons/Profile-dark.svg" alt="" />
+
+                About
+              </button>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <button>
+                <img src="./assets/icons/Voice.svg" alt="" />
+
+                Contact
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="login-sign-up">
+      <ul class="button-group">
+        <li>
+          <a href="#">
+            <button class="login-btn">Login</button>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <button class="sign-up-btn active">Sign Up</button>
+          </a>
+        </li>
+      </ul>
+
+      <div class="login-sign-up-form">
+        <form action="">
+          <h4>Welcome Back!</h4>
+
+          <img src="./assets/icons/user-icon.svg" alt="" />
+
+          <h2>Login</h2>
+
+          <div class="group">
+            <input type="number" id="formInput" />
+            <label class="form-input-label">Mobile Number</label>
+          </div>
+
+          <button>Send OTP</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright">©Copy right 2020 power by lekhaipadhai.com</div>
+    </footer>
+  </body>
+
+  <!-- script -->
+  <script src="./js/script.js"></script>
+
+  <!-- swiper -->
+  <script src="./js/swiper.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".banner .mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      autoplay: {
+        delay: 3000,
+      },
+    });
+  </script>
+</html>
