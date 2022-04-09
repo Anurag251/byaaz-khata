@@ -1390,21 +1390,21 @@ button.animate {
 
 .login-sign-up .button-group button {
   padding: .5rem 1.5rem;
-  background-color: #ffffff;
-  color: #0169F5;
   border: 1px solid #ffffff;
   font-size: 16px;
   border-radius: 6px;
-}
-
-.login-sign-up .button-group button.active {
   border: 1px solid #ffffff;
   background: none;
   color: #ffffff;
 }
 
+.login-sign-up .button-group button.active {
+  background-color: #ffffff;
+  color: #0169F5;
+}
+
 .login-sign-up .login-sign-up-form {
-  max-width: 600px;
+  max-width: 700px;
   margin: 2rem auto;
   padding: 1.5rem;
   background-color: #ffffff;
@@ -1453,11 +1453,157 @@ button.animate {
   margin-bottom: 3rem;
 }
 
+.login-sign-up .login-sign-up-form .input-groups-section {
+  overflow: hidden;
+}
+
+.login-sign-up .login-sign-up-form .input-groups-section .inner-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.login-sign-up .login-sign-up-form .input-groups-section .inner-group .input-groups {
+  width: 100%;
+  margin: 0 .5rem;
+}
+
+.login-sign-up .login-sign-up-form .groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-sign-up .login-sign-up-form .groups .group:nth-child(1) {
+  margin-right: 5px;
+}
+
+.login-sign-up .login-sign-up-form .groups .group:nth-child(2) {
+  margin-left: 5px;
+}
+
 .login-sign-up .login-sign-up-form .group {
   height: 60px;
   width: 100%;
   position: relative;
   margin-top: 2rem;
+}
+
+.login-sign-up .login-sign-up-form .group.error {
+  margin-bottom: 1rem;
+}
+
+.login-sign-up .login-sign-up-form .group.error .error-message {
+  opacity: 1;
+  bottom: -20px;
+  pointer-events: auto;
+}
+
+.login-sign-up .login-sign-up-form .group.error .form-input-label {
+  color: #A00000 !important;
+}
+
+.login-sign-up .login-sign-up-form .group.error input {
+  background: none;
+  border-color: #A00000 !important;
+}
+
+.login-sign-up .login-sign-up-form .group.image-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 300px;
+  max-width: 300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.login-sign-up .login-sign-up-form .group.image-upload .image {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.login-sign-up .login-sign-up-form .group.image-upload img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0169F5;
+}
+
+.login-sign-up .login-sign-up-form .group .error-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #A00000;
+  font-size: 14px;
+  position: absolute;
+  bottom: -10px;
+  opacity: 0;
+  left: 5px;
+  pointer-events: none;
+}
+
+.login-sign-up .login-sign-up-form .group .error-message i {
+  margin-right: 5px;
+}
+
+.login-sign-up .login-sign-up-form .group #uploadImageBtn {
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  background-color: #0169F5;
+  border-radius: 10px;
+}
+
+.login-sign-up .login-sign-up-form .group #uploadImageBtn svg {
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
 }
 
 .login-sign-up .login-sign-up-form .group label {
@@ -1471,6 +1617,7 @@ button.animate {
   font-weight: 600;
   -webkit-transition: .4s;
   transition: .4s;
+  pointer-events: none;
 }
 
 .login-sign-up .login-sign-up-form .group label.shrink {
@@ -1488,8 +1635,48 @@ button.animate {
   border: 1.5px solid rgba(20, 20, 20, 0.2);
 }
 
+.login-sign-up .login-sign-up-form .group input::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.login-sign-up .login-sign-up-form .group input:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.login-sign-up .login-sign-up-form .group input::-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.login-sign-up .login-sign-up-form .group input::placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
 .login-sign-up .login-sign-up-form .group input:focus {
   border-color: #5E9EFF;
+}
+
+.login-sign-up .login-sign-up-form .group input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.login-sign-up .login-sign-up-form .group input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.login-sign-up .login-sign-up-form .group input:focus::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.login-sign-up .login-sign-up-form .group input:focus::placeholder {
+  opacity: 1;
 }
 
 .login-sign-up .login-sign-up-form .group input:focus ~ .form-input-label {

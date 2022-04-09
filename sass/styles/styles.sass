@@ -923,19 +923,19 @@ button
 
     button
       padding: .5rem 1.5rem
-      background-color: $light
-      color: $main
       border: 1px solid $light
       font-size: 16px
       border-radius: 6px
+      border: 1px solid $light
+      background: none
+      color: $light
 
       &.active
-        border: 1px solid $light
-        background: none
-        color: $light
+        background-color: $light
+        color: $main
 
   .login-sign-up-form
-    max-width: 600px
+    max-width: 700px
     margin: 2rem auto
     padding: 1.5rem
     background-color: $light
@@ -966,11 +966,96 @@ button
       text-transform: uppercase
       margin-bottom: 3rem
 
+    .input-groups-section
+      overflow: hidden
+
+      .inner-group
+        @include flex($justify: flex-start)
+        // align-items: flex-start
+        transform: translateX(0%)
+        @include trans()
+
+        .input-groups
+          width: 100%
+          margin: 0 .5rem
+
+    .groups
+      @include flex($justify: space-between)
+
+      .group
+        &:nth-child(1)
+          margin-right: 5px
+
+        &:nth-child(2)
+          margin-left: 5px
+
     .group
       height: 60px
       width: 100%
       position: relative
       margin-top: 2rem
+
+      &.error
+        margin-bottom: 1rem
+
+        .error-message
+          opacity: 1
+          bottom: -20px
+          pointer-events: auto
+
+        .form-input-label
+          color: $error !important
+
+        input
+          background: none
+          border-color: $error !important
+
+      &.image-upload
+        @include flex($justify: center)
+        flex-direction: column
+        height: 300px
+        max-width: 300px
+        margin: 0 auto
+        width: 100%
+
+        .image
+          height: 150px
+          width: 150px
+          margin-bottom: 1rem
+
+        img
+          height: 100%
+          width: 100%
+          object-fit: cover
+          border-radius: 50%
+          border: 3px solid $main
+
+      .error-message
+        @include flex($justify: flex-start)
+        color: $error
+        font-size: 14px
+        position: absolute
+        bottom: -10px
+        opacity: 0
+        left: 5px
+        pointer-events: none
+
+        i
+          margin-right: 5px
+
+      #uploadImageBtn
+        margin: 1rem 0
+        padding: 1rem
+        width: 250px
+        @include flex($justify: center)
+        color: $light
+        background-color: $main
+        border-radius: 10px
+
+        svg
+          margin-right: 5px
+          height: 20px
+          width: 20px
 
       label
         position: absolute
@@ -981,6 +1066,7 @@ button
         color: rgba($dark, .4)
         font-weight: 600
         @include trans()
+        pointer-events: none
 
         &.shrink
           top: -15px
@@ -995,8 +1081,15 @@ button
         border-radius: 10px
         border: 1.5px solid rgba($dark, .2)
 
+        &::placeholder
+          opacity: 0
+          @include trans()
+
         &:focus
           border-color: $sec
+
+          &::placeholder
+            opacity: 1
 
         &:focus ~ .form-input-label
           top: -15px

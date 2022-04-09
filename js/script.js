@@ -87,6 +87,36 @@ if (addOwnerForm || loginSignUpPage) {
       innerGroup.style.transform = `translateX(-${dividedValue[idx]}%)`;
     });
   });
+
+  // uploadImage
+  const uploadImageBtn = document.querySelector("#uploadImageBtn");
+  const uploadImage = document.querySelector(".uploadImage");
+  const imageShow = document.querySelector("#imageShow");
+  const fileName = document.querySelector("#fileName");
+
+  if (uploadImageBtn) {
+    uploadImageBtn.addEventListener("click", () => {
+      uploadImage.click();
+    });
+
+    uploadImage.addEventListener("change", (e) => {
+      let file = e.target.files[0];
+      fileName.innerHTML = file.name;
+      fileName.classList.add("active");
+
+      let fileReader = new FileReader();
+
+      fileReader.onload = () => {
+        let fileUrl = fileReader.result;
+
+        imageShow.classList.add("active");
+
+        imageShow.innerHTML = `<img src="${fileUrl}" alt="">`;
+      };
+
+      fileReader.readAsDataURL(file);
+    });
+  }
 }
 
 // button click animation
