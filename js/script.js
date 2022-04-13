@@ -47,6 +47,7 @@ if (addOwnerForm || loginSignUpPage) {
   const prevBtn = document.querySelectorAll("#prev-btn");
 
   let dividedValue = [];
+  let groupHeight = [280, 480, 400];
   let listOfValue = [];
   let lastValue = 0;
 
@@ -57,7 +58,14 @@ if (addOwnerForm || loginSignUpPage) {
     let divide = 100 / length;
 
     listOfValue[idx] = divide;
+
+    //dynamic Height
+    // let group = inputGroups[idx].querySelectorAll(".group");
+
+    // groupHeight[idx] = parseInt(group.length) * 130;
   });
+
+  // console.log(groupHeight);
 
   lastValue = listOfValue.slice(-1).pop();
 
@@ -78,6 +86,9 @@ if (addOwnerForm || loginSignUpPage) {
     nBtn.addEventListener("click", (e) => {
       e.preventDefault();
       innerGroup.style.transform = `translateX(-${dividedValue[newIdx]}%)`;
+      innerGroup.style.height = `${groupHeight[idx + 1]}px`;
+
+      console.log(groupHeight[idx + 1]);
     });
   });
 
@@ -85,6 +96,9 @@ if (addOwnerForm || loginSignUpPage) {
     pBtn.addEventListener("click", (e) => {
       e.preventDefault();
       innerGroup.style.transform = `translateX(-${dividedValue[idx]}%)`;
+      innerGroup.style.height = `${groupHeight[idx]}px`;
+
+      console.log(groupHeight[idx]);
     });
   });
 
